@@ -48,8 +48,6 @@ paths:
   uploads: src/assets/images
 
 _inputs:
-  permalink:
-    hidden: true
   layout:
     hidden: true
   templateEngineOverride:
