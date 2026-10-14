@@ -18,8 +18,9 @@ collections_config:
     schemas:
       default:
         path: .cloudcannon/schemas/page.md
-        # remove_extra_inputs: false
-        # remove_empty_inputs: false
+        remove_extra_inputs: false
+        remove_empty_inputs: false
+        hide_extra_inputs: false
     _inputs:
       permalink:
         type: text
