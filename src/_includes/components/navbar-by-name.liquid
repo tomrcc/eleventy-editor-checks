@@ -1,0 +1,8 @@
+<div class="check-navbar check-02b">
+  <p class="rerender-proof">CHECK-2B link count: {{ nav.links.size }} | first link shouted: {{ nav.links.first.text | upcase }}</p>
+  <nav>
+    {% for link in nav.links %}
+      <a href="{{ link.url }}">{{ link.text }}</a>
+    {% endfor %}
+  </nav>
+</div>

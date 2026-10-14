@@ -1,0 +1,13 @@
+---
+layout: layouts/base.liquid
+---
+<h1>{{ title }}</h1>
+{% if content_blocks %}
+<div class="blocks" data-editable="array" data-prop="content_blocks" data-component-key="_name">
+  {% for block in content_blocks %}
+    <div data-editable="array-item" data-id="{{ block._name }}" data-component="{{ block._name }}">
+      {% includeWith block._name, block %}
+    </div>
+  {% endfor %}
+</div>
+{% endif %}

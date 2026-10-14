@@ -1,0 +1,11 @@
+{
+  "ssg": "eleventy",
+  "mode": "hosted",
+  "build": {
+    "install_command": "npm i",
+    "build_command": "npx @11ty/eleventy",
+    "output_path": "_site",
+    "node_version": "file",
+    "preserved_paths": "node_modules/,.cache"
+  }
+}

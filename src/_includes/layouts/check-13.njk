@@ -1,0 +1,13 @@
+---
+layout: layouts/base.liquid
+---
+<h1>{{ title }}</h1>
+<div class="blocks" data-editable="array" data-prop="content_blocks" data-id-key="_id">
+  {% for block in content_blocks %}
+    <section data-editable="array-item" data-id="{{ block._id }}">
+      {% include "blocks/" + block._name + ".njk" %}
+    </section>
+  {% endfor %}
+  {% set block = {} %}
+  <template data-id="note"><section>{% include "blocks/note.njk" %}</section></template>
+</div>

@@ -1,0 +1,18 @@
+---
+layout: layouts/base.liquid
+---
+<h1>{{ title }}</h1>
+
+<h2>CHECK-2A navbar (data-prop="@data[nav]", reads its own fields)</h2>
+<editable-component data-component="components/navbar" data-prop="@data[nav]">
+  {% includeWith "components/navbar", nav %}
+</editable-component>
+
+<h2>CHECK-2B navbar (data-prop="@data[nav]", reads nav by name)</h2>
+<editable-component data-component="components/navbar-by-name" data-prop="@data[nav]">
+  {% include "components/navbar-by-name" %}
+</editable-component>
+
+<div class="content" data-editable="text" data-prop="@content">
+  {{ content }}
+</div>

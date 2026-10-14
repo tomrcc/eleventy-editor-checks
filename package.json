@@ -1,0 +1,14 @@
+{
+  "name": "eleventy-editor-checks",
+  "private": true,
+  "type": "module",
+  "description": "Editor-only checks for the Eleventy CloudCannon skills. See CHECKS.md.",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@cloudcannon/editable-regions": "^0.0.21",
+    "markdown-it": "^15.0.2"
+  }
+}

@@ -1,0 +1,147 @@
+# Editor-check site for the Eleventy skills. See CHECKS.md.
+# Input directory is src; no `source` key, every path starts with src.
+
+collections_config:
+  pages:
+    path: src
+    # CHECK-6: deliberately no "!_includes/**", "!_data/**" or "!**/*.11tydata.*" here.
+    glob:
+      - "!posts/**"
+    url: "/{permalink|if=permalink}[full_slug|unless=permalink]/"
+    icon: wysiwyg
+  posts:
+    path: src/posts
+    # CHECK-6: deliberately no "!**/*.11tydata.*" here.
+    url: "/articles/[slug|strip_leading_date]/"
+    icon: article
+  data:
+    path: src/_data
+    glob:
+      - "**/*.json"
+    disable_url: true
+    icon: settings
+    _enabled_editors:
+      - data
+
+data_config:
+  nav:
+    path: src/_data/nav.json
+
+paths:
+  static: src
+  uploads: src/assets/images
+
+_inputs:
+  permalink:
+    hidden: true
+  layout:
+    hidden: true
+  templateEngineOverride:
+    hidden: true
+  _id:
+    type: text
+    instance_value: UUID
+    hidden: true
+  content_blocks:
+    type: array
+    options:
+      structures: _structures.content_blocks
+  links:
+    type: array
+    options:
+      structures: _structures.links
+  description:
+    type: markdown
+  body:
+    type: markdown
+
+_structures:
+  content_blocks:
+    id_key: _name
+    values:
+      - label: CHECK-9 Hero
+        icon: flag
+        value:
+          _name: components/hero
+          heading: CHECK-9 new hero heading
+          description:
+        preview:
+          text:
+            - key: heading
+      - label: CHECK-9 Text
+        icon: article
+        value:
+          _name: components/text
+          body: CHECK-9 new text body
+        preview:
+          text:
+            - key: body
+      - label: CHECK-13 Note
+        icon: sticky_note_2
+        value:
+          _name: note
+          _id:
+          heading: CHECK-13 new note heading
+        preview:
+          text:
+            - key: heading
+  links:
+    values:
+      - label: CHECK-2 Link
+        icon: link
+        value:
+          text: CHECK-2 new link
+          url: /
+        preview:
+          text:
+            - key: text
+
+_snippets:
+  check_01_badge:
+    template: eleventy_liquid_shortcode_positional_args
+    inline: false
+    preview:
+      text: CHECK-1 Badge snippet
+      icon: label
+    definitions:
+      shortcode_name: badge
+      positional_args:
+        - editor_key: label
+          type: string
+  check_03_pill_liquid:
+    template: eleventy_liquid_shortcode_positional_args
+    inline: false
+    preview:
+      text: CHECK-3 Pill (Liquid template)
+      icon: label
+    definitions:
+      shortcode_name: pill
+      positional_args:
+        - editor_key: label
+          type: string
+        - editor_key: colour
+          type: string
+  check_04_pill_nunjucks:
+    template: eleventy_nunjucks_shortcode_positional_args
+    inline: false
+    preview:
+      text: CHECK-4 Pill (Nunjucks template)
+      icon: label
+    definitions:
+      shortcode_name: pill
+      positional_args:
+        - editor_key: label
+          type: string
+        - editor_key: colour
+          type: string
+  check_07_notice:
+    template: eleventy_liquid_include
+    inline: false
+    preview:
+      text: CHECK-7 Notice include
+      icon: info
+    definitions:
+      include_name: snippets/notice.liquid
+      named_args:
+        - editor_key: message
+          type: string

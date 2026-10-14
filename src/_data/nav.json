@@ -1,0 +1,6 @@
+{
+  "links": [
+    { "text": "CHECK-2 link one", "url": "/" },
+    { "text": "CHECK-2 link two", "url": "/check-02-navbar/" }
+  ]
+}

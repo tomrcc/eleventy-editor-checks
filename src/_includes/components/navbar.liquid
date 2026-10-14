@@ -1,0 +1,8 @@
+<div class="check-navbar check-02a">
+  <p class="rerender-proof">CHECK-2A link count: {{ links.size }} | first link shouted: {{ links.first.text | upcase }}</p>
+  <nav data-editable="array" data-prop="links">
+    {% for link in links %}
+      <a data-editable="array-item" href="{{ link.url }}"><editable-text data-prop="text">{{ link.text }}</editable-text></a>
+    {% endfor %}
+  </nav>
+</div>

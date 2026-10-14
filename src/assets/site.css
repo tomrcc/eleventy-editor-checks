@@ -1,0 +1,9 @@
+body { font-family: system-ui, sans-serif; max-width: 48rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+.site-header { margin-bottom: 1rem; }
+.badge, .pill, .unconfigured { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 0.25rem; background: #fde68a; }
+.notice { border-left: 4px solid #2563eb; padding: 0.5rem 1rem; background: #eff6ff; }
+.check-navbar { border: 1px dashed #888; padding: 0.5rem; margin-bottom: 1rem; }
+.check-navbar nav a { margin-right: 1rem; }
+.rerender-proof { font-family: monospace; }
+.blocks > * { display: block; margin-bottom: 1rem; }
+.hero, .text-block, .note-block { border: 1px solid #ccc; padding: 0.75rem; }

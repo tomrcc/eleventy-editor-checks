@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="site-header"><a href="/">All checks</a></header>
+  <main>
+    {{ content }}
+  </main>
+  <script>
+    if (window.inEditorMode) {
+      import("/register-components.js").catch((error) => console.warn(error));
+    }
+  </script>
+</body>
+</html>
