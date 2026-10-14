@@ -122,19 +122,6 @@ _snippets:
       positional_args:
         - editor_key: label
           type: string
-  check_03_pill_liquid:
-    template: eleventy_liquid_shortcode_positional_args
-    inline: false
-    preview:
-      text: CHECK-3 Pill (Liquid template)
-      icon: label
-    definitions:
-      shortcode_name: pill
-      positional_args:
-        - editor_key: label
-          type: string
-        - editor_key: colour
-          type: string
   check_04_pill_nunjucks:
     template: eleventy_nunjucks_shortcode_positional_args
     inline: false
