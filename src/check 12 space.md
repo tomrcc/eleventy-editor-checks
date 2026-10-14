@@ -1,4 +1,5 @@
 ---
+_schema: default
 title: CHECK-12 File name with spaces
 layout: layouts/page.liquid
 ---
