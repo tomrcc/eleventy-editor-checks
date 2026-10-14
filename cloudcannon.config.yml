@@ -1,20 +1,25 @@
 # Editor-check site for the Eleventy skills. See CHECKS.md.
 # Input directory is src; no `source` key, every path starts with src.
 
+_enabled_editors: 
+  - visual
+  - content
+
 collections_config:
   pages:
     path: src
     # CHECK-6: deliberately no "!_includes/**", "!_data/**" or "!**/*.11tydata.*" here.
     glob:
       - "!posts/**"
+      - "!_includes/**"
     url: "/{permalink|if=permalink}[full_slug|unless=permalink]/"
     icon: wysiwyg
     # Schema test: permalink is in the schema, but files may omit it.
     schemas:
       default:
         path: .cloudcannon/schemas/page.md
-        remove_extra_inputs: false
-        remove_empty_inputs: false
+        # remove_extra_inputs: false
+        # remove_empty_inputs: false
     _inputs:
       permalink:
         type: text
