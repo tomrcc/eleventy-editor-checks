@@ -147,4 +147,9 @@ _snippets:
         - editor_key: message
           type: string
 
+_snippets_imports:
+  eleventy_liquid:
+    include:
+      - eleventy_liquid_raw
+
 
