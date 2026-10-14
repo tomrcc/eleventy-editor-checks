@@ -7,3 +7,7 @@ templateEngineOverride: njk,md
 This file's body is processed by Nunjucks (templateEngineOverride: njk,md).
 
 {% pill "CHECK-4 label", "#df6464" %}
+
+
+
+{% pill, "new-liquid" "#93b0dd" %}
